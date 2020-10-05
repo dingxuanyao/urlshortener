@@ -19,3 +19,7 @@ Enter the URL as follows to be redirected:
 ```
 localhost:8000/urlshortener/{short_id}
 ```
+To test:
+```
+python manage.py test
+```
