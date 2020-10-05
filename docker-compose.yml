@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=urlshortener
+      - POSTGRES_USER=dbuser2
+      - POSTGRES_PASSWORD=password
+  web:
+    image: dingxuanyao/urlshortener:v2
+    build: mysite
+    command: ./start_app.sh
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
